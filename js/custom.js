@@ -1,0 +1,6 @@
+$( "#add" ).click(function() {
+ 
+var newElement = '<div class="form-group"><label for="question">Ask Question</label><input type="text" class="form-control" name="question[]" placeholder="Enter your question here" Required></div><div class="form-group"><label for="correct_answer">Option 1</label><input type="text" class="form-control"  name="option1[]" placeholder="Enter the first option" Required></div><div class="form-group"><label for="correct_answer">Option 2</label><input type="text" class="form-control" name="option2[]" placeholder="Enter the second option" Required></div><div class="form-group"><label for="correct_answer">Option 3</label><input type="text" class="form-control" name="option3[]" placeholder="Enter the thrid option" Required></div><div class = "form-group"><label for="correct_answer">Option 4</label><input type="text" class="form-control" name="option4[]" placeholder="Enter the fourth option" Required></div><div class = "form-group"><label>Correct Choice(Copy exactly from correct option)</label><input type="text" class="form-control" name="correct_ans[]" placeholder="Enter the correct choice here" Required></div>';
+$( "#items" ).append( $(newElement) );
+ 
+});

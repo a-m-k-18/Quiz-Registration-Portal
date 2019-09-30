@@ -62,10 +62,15 @@ if(!isset($_SESSION['fusername']))
                 <label for="correct_answer">Option 4</label>
                     <input type="text" class="form-control" name="option4[]" placeholder="Enter the fourth option" Required>
                 </div>
-                <div class = "form-group">
-                <label>Correct Choice(Copy exactly from correct option)</label>
-                    <input type="text" class="form-control" name="correct_ans[]" placeholder="Enter the correct choice here" Required>
-                </div>
+                <div>
+                    <label for="correct_answer">Correct Choice: </label>
+                    <select name="correct_ans[]"> 
+                        <option value="1">(A)</option>
+                        <option value="2">(B)</option>
+                        <option value="3">(C)</option>
+                        <option value="4">(D)</option>
+                    </select>
+            </div><br>
             </div>
             <input type="button" class="btn btn-primary btn-large" value="Add Question" name="add entry" id = "add">
             <button type = "submit" name = "submit" class = "btn">Add Quiz</button>
@@ -120,7 +125,7 @@ for ($i = 0;$i < $size;$i++)
  $ans3 = $_POST['option3'][$i];
  $ans4 = $_POST['option4'][$i];
  $correct_ans = $_POST['correct_ans'][$i];
-
+ 
 $query5 = "INSERT INTO questions(question,ans1,ans2,ans3,ans4,correct_ans,year,branch,subject,quizno)
     VALUES ('$question' ,'$ans1','$ans2','$ans3','$ans4' , '$correct_ans' , '$year' , '$branch' ,'$subject', '$quizno')";
 mysqli_query($con , $query5);
